@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Journal;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Services\OpenAIService;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 
 class JournalController extends Controller
@@ -96,4 +97,16 @@ class JournalController extends Controller
 
         return redirect()->route('journals.index')->with('success', 'Content deleted.');
     }
+
+    public function generateAI(Request $request, Journal $journal, OpenAIService $openAI)
+    {
+        $prompt = "Analyze this journal entry and recommend activities for the next day\n\n" . $journal->content;
+        $response = $openAI->generateResponse($prompt);
+
+        return view('journals.show', [
+            'journal' => $journal,
+            'aiResponse' => $response,
+        ]);
+    }
+
 }

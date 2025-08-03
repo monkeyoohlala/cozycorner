@@ -22,4 +22,9 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('journals', JournalController::class);
 });
 
+
+Route::post('/journals/{journal}/ai', [JournalController::class, 'generateAI'])
+    ->middleware('auth')
+    ->name('journals.generateAI');
+
 require __DIR__.'/auth.php';
