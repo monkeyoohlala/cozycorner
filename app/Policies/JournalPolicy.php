@@ -13,7 +13,7 @@ class JournalPolicy
      */
     public function viewAny(User $user): bool
     {
-        return false;
+        return $user->id === $journal->user_id;
     }
 
     /**
@@ -29,7 +29,7 @@ class JournalPolicy
      */
     public function create(User $user): bool
     {
-        return false;
+        return $user->id === $journal->user_id;
     }
 
     /**
@@ -37,7 +37,7 @@ class JournalPolicy
      */
     public function update(User $user, Journal $journal): bool
     {
-        return false;
+        return $user->id === $journal->user_id;
     }
 
     /**
@@ -45,7 +45,7 @@ class JournalPolicy
      */
     public function delete(User $user, Journal $journal): bool
     {
-        return false;
+        return $user->id === $journal->user_id;
     }
 
     /**
@@ -53,7 +53,7 @@ class JournalPolicy
      */
     public function restore(User $user, Journal $journal): bool
     {
-        return false;
+        return $user->id === $journal->user_id;
     }
 
     /**
