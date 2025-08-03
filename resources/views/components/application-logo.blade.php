@@ -1,5 +1,6 @@
 <img
  src="{{ asset('images/cozycornerlogo.png') }}"
   alt="Logo"
-  width="100px"
+  style="height: 40px; width: 40px;"
+
   />
