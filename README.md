@@ -9,6 +9,13 @@ https://github.com/monkeyoohlala/cozycorner
 Cozy Corner Journal
 
 
+Cozy Corner Recording:
+https://smc.instructuremedia.com/embed/fb2cd417-5a03-4e78-bdf1-072e66f8a4f4
+
+
+
+
+
 Project Description:
 This project is a journal app that has a twist. After writing a journal entry you can use AI to output the next day's recommended activities to do.
 
